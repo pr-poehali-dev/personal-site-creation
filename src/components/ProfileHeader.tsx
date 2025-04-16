@@ -1,53 +1,74 @@
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Award, Landmark } from "lucide-react";
+import { Shield, Mail, Phone, MapPin, Award, UserCircle, Calendar } from "lucide-react";
 
 const ProfileHeader = () => {
   return (
     <Card className="gta-card mb-6">
-      <div className="gta-header flex justify-between items-center">
-        <span>ПРОФИЛЬ ПЕРСОНАЖА</span>
-        <span className="text-primary text-sm">ID: #19674</span>
+      <div className="gta-header">
+        <UserCircle className="h-5 w-5 mr-2" />
+        <span>ЛИЧНЫЕ ДАННЫЕ</span>
       </div>
-      <CardContent className="p-6 flex flex-col md:flex-row items-center gap-6">
-        <div className="relative">
-          <Avatar className="w-24 h-24 md:w-32 md:h-32 border-2 border-primary/70 bg-secondary">
-            <AvatarImage src="/placeholder.svg" alt="Фото профиля" />
-            <AvatarFallback className="text-2xl bg-secondary text-primary">ЛК</AvatarFallback>
-          </Avatar>
-          <div className="absolute -bottom-2 -right-2 bg-accent text-white text-xs py-0.5 px-2 font-bold uppercase">
-            Уровень 50
+      
+      <CardContent className="p-6">
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex-shrink-0 w-full md:w-40 h-40 relative rounded-sm overflow-hidden border-2 border-primary/50">
+            <img
+              src="/placeholder.svg"
+              alt="Профиль"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-primary/80 text-center py-1">
+              <span className="text-xs font-bold text-primary-foreground">ID: 2778-AX</span>
+            </div>
           </div>
-        </div>
-        
-        <div className="text-center md:text-left flex-1">
-          <h1 className="text-2xl md:text-3xl font-bold text-primary tracking-wide">Иванов Иван Иванович</h1>
-          <p className="text-muted-foreground mt-1">Профессиональное портфолио</p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
-            <div className="flex items-center gap-2 bg-secondary/50 p-2 rounded-sm border border-primary/30">
-              <Shield className="h-5 w-5 text-primary" />
-              <div>
-                <div className="text-xs text-muted-foreground">РЕПУТАЦИЯ</div>
-                <div className="font-bold">98/100</div>
+          <div className="flex-1 space-y-4">
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight mb-1">Андрей Твиксов</h1>
+              
+              <div className="flex items-center gap-2 mb-4">
+                <Badge variant="outline" className="border-primary/50 text-primary px-2 py-0.5 uppercase font-bold">
+                  Статус: Активный
+                </Badge>
+                <Badge variant="outline" className="border-primary/50 text-primary px-2 py-0.5 uppercase font-bold flex items-center gap-1">
+                  <Shield className="h-3 w-3" /> Уровень: 7
+                </Badge>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 text-primary" />
+                  <span>twixov@fsvng.gov.ru</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 text-primary" />
+                  <span>+7 (495) 667-89-01</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-primary" />
+                  <span>г. Москва, ул. Красноказарменная, 9А</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4 text-primary" />
+                  <span>13.02.2025</span>
+                </div>
               </div>
             </div>
             
-            <div className="flex items-center gap-2 bg-secondary/50 p-2 rounded-sm border border-primary/30">
-              <Award className="h-5 w-5 text-primary" />
-              <div>
-                <div className="text-xs text-muted-foreground">ОПЫТ</div>
-                <div className="font-bold">5+ лет</div>
+            <div className="bg-primary/10 p-3 border border-primary/30 rounded-sm flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Award className="h-5 w-5 text-primary" />
+                <span className="font-bold uppercase text-sm">Высший допуск</span>
               </div>
-            </div>
-            
-            <div className="flex items-center gap-2 bg-secondary/50 p-2 rounded-sm border border-primary/30">
-              <Landmark className="h-5 w-5 text-primary" />
-              <div>
-                <div className="text-xs text-muted-foreground">ЛОКАЦИЯ</div>
-                <div className="font-bold">Москва</div>
-              </div>
+              
+              <span className="text-xs bg-primary/20 px-2 py-1 font-mono">
+                A-78XX-9021
+              </span>
             </div>
           </div>
         </div>

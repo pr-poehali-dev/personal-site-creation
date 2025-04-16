@@ -51,7 +51,9 @@ const PositionCard: React.FC<PositionCardProps> = ({ position }) => {
           <span>{position.period}</span>
         </div>
         
-        <p className="mb-5 text-sm leading-relaxed">{position.description}</p>
+        {position.description && (
+          <p className="mb-5 text-sm leading-relaxed">{position.description}</p>
+        )}
         
         <div className="flex flex-col gap-2 mb-4">
           <div className="text-sm font-bold uppercase tracking-wide flex items-center mb-2">
