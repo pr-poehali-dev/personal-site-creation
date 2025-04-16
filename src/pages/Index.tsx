@@ -31,10 +31,10 @@ const Index = () => {
         <div className="max-w-5xl mx-auto">
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-2xl font-bold text-primary uppercase tracking-wider">
-              Админ-панель: {activeTab === "profile" ? "Профиль" : activeTab === "positions" ? "Должности" : "Контакты"}
+              {activeTab === "profile" ? "Личное дело" : activeTab === "positions" ? "Служебное положение" : "Контактные данные"}
             </h1>
             <div className="text-sm text-muted-foreground">
-              Время сессии: 01:24:36
+              Доступ: АВТОРИЗОВАН
             </div>
           </div>
           
@@ -50,7 +50,7 @@ const Index = () => {
               className={`flex-1 py-2 text-center uppercase font-bold ${activeTab === "positions" ? "text-primary border-b-2 border-primary -mb-0.5" : ""}`}
               onClick={() => setActiveTab("positions")}
             >
-              Должности
+              Служба
             </button>
             <button 
               className={`flex-1 py-2 text-center uppercase font-bold ${activeTab === "contact" ? "text-primary border-b-2 border-primary -mb-0.5" : ""}`}

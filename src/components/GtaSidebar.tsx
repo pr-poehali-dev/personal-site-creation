@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { User, Briefcase, Phone, Settings, Activity } from "lucide-react";
+import { User, Shield, Phone, Settings, Activity } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface GtaSidebarProps {
@@ -13,7 +13,7 @@ const GtaSidebar: React.FC<GtaSidebarProps> = ({ onSelectTab, activeTab }) => {
   
   const menuItems = [
     { id: "profile", label: "ПРОФИЛЬ", icon: User },
-    { id: "positions", label: "ДОЛЖНОСТИ", icon: Briefcase },
+    { id: "positions", label: "СЛУЖБА", icon: Shield },
     { id: "contact", label: "КОНТАКТЫ", icon: Phone },
   ];
 
@@ -23,7 +23,7 @@ const GtaSidebar: React.FC<GtaSidebarProps> = ({ onSelectTab, activeTab }) => {
         <div className="bg-primary/20 p-2 rounded-sm">
           <Activity className="h-5 w-5 text-primary" />
         </div>
-        <h2 className="text-xl font-bold tracking-wider text-primary uppercase">Админка</h2>
+        <h2 className="text-xl font-bold tracking-wider text-primary uppercase">ФСВНГ</h2>
       </div>
       
       {menuItems.map((item) => (
